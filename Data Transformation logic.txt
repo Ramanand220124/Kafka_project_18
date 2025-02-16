@@ -1,0 +1,19 @@
+         # Change the category column to lowercase
+        category = msg.value()['category'].lower()
+
+        # If category is 'electronics', change to uppercase
+        if category == 'electronics':
+            msg.value()['category'] = category.upper()
+            # Increase price by 20% for electronics
+            msg.value()['price'] = msg.value()['price'] * 1.2
+
+        # Apply 50% discount if category is 'furniture'
+        elif category == 'furniture':
+            msg.value()['price'] = msg.value()['price'] * 0.5
+        
+        # Apply 10% discount if category is 'accessories'
+        elif category == 'accessories':
+            msg.value()['price'] = msg.value()['price'] * 0.9
+
+        # Round the price to 2 decimal places
+        msg.value()['price'] = round(msg.value()['price'], 2)
