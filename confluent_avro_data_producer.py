@@ -39,26 +39,26 @@ def delivery_report(err, msg):
         msg.key(), msg.topic(), msg.partition(), msg.offset()))
     print("=====================")
 
-# Define Kafka configuration
+# Define Kafka configuration, provide details on bootstrap.servers,sasl.username and sasl.password
 kafka_config = {
-    'bootstrap.servers': 'pkc-619z3.us-east1.gcp.confluent.cloud:9092',
+    'bootstrap.servers': '',
     'sasl.mechanisms': 'PLAIN',
     'security.protocol': 'SASL_SSL',
-    'sasl.username': 'IYJAIR5B4G3DVLVH',
-    'sasl.password': 'bW7TxHwa3e9tMIkQVAZ3Gdh/cN0QWbUcWne02PT724Moha+8DGixUy7qmc0Serxd'
+    'sasl.username': '',
+    'sasl.password': ''
 }
 
 # Create a Schema Registry client
 schema_registry_client = SchemaRegistryClient({
   'url': 'https://psrc-q8qx7.us-central1.gcp.confluent.cloud',
-  'basic.auth.user.info': '{}:{}'.format('QXBZKFUXGXVY2F2H', 'arHePHSkARZ+Q1cLlN4rlW7qV8ACX8gnCOsDL2OFb6b4bNO5oNI/LHGmh9GBzq4G')
+  'basic.auth.user.info': '{}:{}'.format('', '')
 })
 
 # Database connection
 connection = mysql.connector.connect(
     host='127.0.0.1',
     user='root',
-    password='Simple1$',
+    password='xxxxxxx',
     database='demo'
 )
 cursor = connection.cursor()
